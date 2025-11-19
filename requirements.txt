@@ -1,25 +1,34 @@
 # FastAPI and server
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-python-multipart==0.0.6
+fastapi[all]
+uvicorn
+python-multipart
 
 # PDF processing
-pypdf==3.17.0
+pypdf
+python-magic
 
-# Database (optional for basic deployment)
-pymongo==4.6.0
+# Database
+psycopg2-binary
+pymongo
+sqlalchemy
 
 # Vector stores
-chromadb==0.4.18
+chromadb
+pgvector
+
+# LLamaIndex
+llama-index
+llama-index-vector-stores-chroma
+llama-index-llms-openai # Changed: OpenRouter uses OpenAI format
 
 # OpenAI client (works with OpenRouter)
-openai==1.3.0
+openai  # Changed: For OpenRouter API
 
 # Environment variables
-python-dotenv==1.0.0
+python-dotenv
 
 # Security
-python-jose[cryptography]==3.3.0
-passlib[bcrypt]==1.7.4
-pydantic==2.5.0
-pydantic-settings==2.1.0
+python-jose
+passlib
+pydantic
+pydantic-settings
