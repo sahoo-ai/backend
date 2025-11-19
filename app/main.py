@@ -10,10 +10,10 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Add CORS middleware (for frontend)
+# Add CORS middleware (IMPORTANT: Allow all origins for testing)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify exact origins
+    allow_origins=["*"],  # Allow all origins including Lovable
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,12 +28,10 @@ async def startup_event():
     print("=" * 60)
     print(f"🚀 {settings.APP_NAME} Starting...")
     print("=" * 60)
-    print("✅ PostgreSQL: Connected")
-    print("✅ MongoDB: Connected")
     print("✅ ChromaDB: Connected")
     print("✅ OpenRouter: Configured")
     print("=" * 60)
-    print(f"📝 API Documentation: http://localhost:8000/docs")
+    print(f"📝 API Documentation: /docs")
     print("=" * 60)
 
 @app.on_event("shutdown")
